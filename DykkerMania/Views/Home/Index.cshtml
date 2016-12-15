@@ -5,3 +5,20 @@
 }
 
 
+
+<h3>My Google Maps Demo</h3>
+<div id="map" class="indexgmaps"></div>
+<script>
+     
+    function initMap() {
+        var mapcenter = { lat: 56.337486, lng: 10.5554786 };
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: mapcenter
+        
+           
+        });
+     }  
+    
+</script>
