@@ -13,5 +13,11 @@ namespace DykkerMania.Controllers
         {
             return View();
         }
+
+
+        public ActionResult Opretpunkt()
+        {
+            return View();
+        }
     }
 }
