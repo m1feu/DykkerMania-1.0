@@ -10,7 +10,7 @@ namespace DmRepo
         /// <returns>Retunere en MS SQL connection string</returns>
         public static SqlConnection GetCon()
         {
-            SqlConnection con = new SqlConnection("server=mssql7.unoeuro.com;database=amhs_dk_db;uid=amhs_dk;pwd=hxmkna62;MultipleActiveResultSets=True");
+            SqlConnection con = new SqlConnection("server = 194.255.108.50; database = dbgtswebh216_2; uid = gtswebh216_2; pwd = eG4Gutx3; MultipleActiveResultSets = True");
             return con;
         }
 

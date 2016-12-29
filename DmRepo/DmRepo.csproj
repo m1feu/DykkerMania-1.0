@@ -42,13 +42,20 @@
   <ItemGroup>
     <Compile Include="AutoFac.cs" />
     <Compile Include="Conn.cs" />
+    <Compile Include="Factories\BrugerFac.cs" />
+    <Compile Include="Factories\GmapFac.cs" />
+    <Compile Include="Factories\LogoFac.cs" />
+    <Compile Include="Factories\RatingsFac.cs" />
+    <Compile Include="Factories\SmlFac.cs" />
     <Compile Include="Mapper.cs" />
+    <Compile Include="Models\Bruger.cs" />
+    <Compile Include="Models\Gmap.cs" />
+    <Compile Include="Models\Logo.cs" />
+    <Compile Include="Models\Ratings.cs" />
+    <Compile Include="Models\Sml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factories\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
