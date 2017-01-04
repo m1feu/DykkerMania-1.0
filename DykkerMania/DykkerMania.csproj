@@ -117,6 +117,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\animate.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\index.html" />
+    <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\responsive.css" />
+    <Content Include="assets\css\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GFX\arrow-pointer.svg" />
@@ -184,6 +192,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DmRepo\DmRepo.csproj">
+      <Project>{0437277a-71d4-4ea5-822b-8e54b76a0940}</Project>
+      <Name>DmRepo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
