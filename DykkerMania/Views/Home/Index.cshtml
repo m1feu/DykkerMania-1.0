@@ -9,17 +9,49 @@
 
 <div id="map" class="indexgmaps" style="border:solid 2px black;"></div>
 <script>
-     
+
     function initMap() {
         var mapcenter = { lat: 56.337486, lng: 10.5554786 };
-
-        var map = new google.maps.Map(document.getElementById('map'), {
+       
+        var mapOptions = {
             zoom: 7,
             center: mapcenter
+
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        var iconBase = '/Content/GFX/MapIcons/';
+        var icons = {
+            Natur: {
+                icon: iconBase + 'UVJagt_Natur.png'
+            },
+            Vrag: {
+                icon: iconBase + 'Vrag.png'
+            },
+            Slaebesteder: {
+                icon: iconBase + 'slaebesteder.png'
+            },
+            Andet: {
+                icon: iconBase + 'andet.png'
+            }
+        }
         
-           
-        });
-       
-     }  
-    
+        function addMarker(feature) {
+            var marker = new google.maps.Marker({
+                position: feature.position,
+                icon: icons[feature.type].icon,
+                map: map
+            });
+        } 
+        var features = [
+            {
+                position: new google.maps.LatLng(55.88698, 10.72763),
+                type: 'Vrag'
+                
+            }
+        ]
+        for (var i = 0, feature; feature = features[i]; i++) {
+            addMarker(feature);
+        }
+    }
 </script>

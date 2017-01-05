@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 @{
     ViewBag.Title = "Dykkermania.dk opret punkt";
@@ -109,4 +110,117 @@
     }
    
 
+=======
+﻿
+@{
+    ViewBag.Title = "Dykkermania.dk opret punkt";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Opret punkt</h2>
+<div class="col-lg-4 pull-right">
+
+    <div id="map" class="opretgmaps"></div>
+    Google dec: <input id="gmapsdec" />
+</div>
+
+<div class="col-lg-2 pull-right">
+    <div class="koordinater">
+       
+        
+        Google Lat: <input id="latFld" class="koordinput" name="koordgmapslat" type="text"/>
+        <br/>
+        Google lng: <input id="lngFld" class="koordinput" name="koordgmapslng" type="text"/>
+        <br/>
+        <br/>
+        WGS84 Lat: <input id="lat84" class="koordinput" name="koordgmapslat" type="text"/>
+        <br/>
+        WGS84 Lng: <input id="lng84" class="koordinput" name="koordgmapslng" type="text" />
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    var map;
+    var markersArray = [];
+    
+    //init function which loads map with google js api
+    function initMap() {
+        var mapcenter = new google.maps.LatLng(56.337486, 10.5554786);
+        var myOptions = { 
+            zoom: 6,
+            center: mapcenter,
+            mapTypeControl:true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            
+        };
+        //Gmaps load in div box with id=map
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+        
+    
+        // add a click event handler to the map object
+        google.maps.event.addListener(map, "click", function (event) {
+            // place a marker
+            placeMarker(event.latLng);
+
+            // display the lat/lng in your form's lat/lng fields
+            document.getElementById("latFld").value = event.latLng.lat();
+            document.getElementById("lngFld").value = event.latLng.lng();
+            document.getElementById("gmapsdec").value = event.latLng.lat() + "," + event.latLng.lng();
+
+            var strN = event.latLng.lat().toString();
+            var arrN = strN.split(".");
+            var decN = arrN[1] * 60;
+
+            var strE = event.latLng.lng().toString();
+            var arrE = strE.split(".");
+            var decE = arrE[1] * 60;
+
+            document.getElementById("lat84").value = arrN[0] + "." + decN.toString().substring(0, 2) + "." + decN.toString().substring(2, 5);
+            document.getElementById("lng84").value = arrE[0] + "." + decE.toString().substring(0, 2) + "." + decE.toString().substring(2, 5);
+
+            //document.getElementById("ctl00_ContentPlaceHolder1_txtLong2").value = arrN[0] + "" + decN.toString().substring(0, 2) + "." + decN.toString().substring(2, 5);
+            //document.getElementById("ctl00_ContentPlaceHolder1_txtLati2").value = arrE[0] + "" + decE.toString().substring(0, 2) + "." + decE.toString().substring(2, 5);
+
+        });
+
+
+
+
+        function placeMarker(location) {
+            // first remove all markers if there are any
+            deleteOverlays();
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                
+        });
+
+            // add marker in markers array
+            markersArray.push(marker);
+
+            //map.setCenter(location);
+        }
+
+        // Deletes all markers in the array by removing references to them
+        function deleteOverlays() {
+            if (markersArray) {
+                for (i in markersArray) {
+                    markersArray[i].setMap(null);
+                }
+                markersArray.length = 0;
+            }
+        }
+
+     
+
+    }
+    //Cursor change to pointer from hand
+    function ChangeDragabbleCursor() {
+        map.setOptions({ draggableCursor: 'url(C:\Users\dann0991\Source\Repos\DykkerMania-1.0\DykkerMania\Content\GFX\arrow-pointer.svg) 16 16, default' });
+    }
+   
+
+>>>>>>> origin/master
 </script>

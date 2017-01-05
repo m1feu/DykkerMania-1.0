@@ -128,7 +128,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\GFX\arrow-pointer.svg" />
+<<<<<<< HEAD
     <Content Include="Content\GFX\logo.png" />
+=======
+    <Content Include="Content\GFX\MapIcons\andet.png" />
+    <Content Include="Content\GFX\MapIcons\UVJagt_Natur.png" />
+    <Content Include="Content\GFX\MapIcons\slaebesteder.png" />
+    <Content Include="Content\GFX\MapIcons\Vrag.png" />
+>>>>>>> origin/master
     <Content Include="Content\GMapsStyles.css">
       <DependentUpon>GMapsStyles.scss</DependentUpon>
     </Content>
