@@ -117,15 +117,15 @@
 
 
 
-    <section id="top-contact" class="top-contact">
+    <section id="top-contact" class="top-contact" style="height:100px;">
 
         <div class="container">
             <div class="row">
-              
 
-                <img style="height:50px;" src="~/Content/GFX/logo.png" />  <h4 style="display:inline-block;">Dykkermania</h4>
+
+                <img style="height:70px ; margin-top:10px;" src="~/Content/GFX/logo.png"  />  <h3 style="display:inline-block;">Dykkermania</h3>
                 <div class="col-sm-4 pull-right">
-
+                    
                     <div class="top-social">
                         <ul>
                             <li>
@@ -139,6 +139,10 @@
                             </li>
                         </ul>
                     </div>
+
+                    <input placeholder="Brugernavn" style="width:100px; height:20px; " />
+                    <input placeholder="Password" style="width:100px; height:20px;" />
+
                 </div>
             </div><!-- /.row -->
         </div><!-- /.container -->
@@ -154,6 +158,7 @@
 
     <div class="container body-content">
         @RenderBody()
+        
     </div>
 
 
@@ -164,8 +169,10 @@
 
     <!-- Trigger/Open The Modal -->
 
-    <div style="background-color:#3498db; border: solid 0px black; padding-left: 48%; height:95px; padding-top:20px;">
-        <span id="myBtn"><i class="fa fa-arrow-up fa-3x"></i></span>
+    <div style="background-color:#3498db; border: solid 0px black; padding-left: 48%; height:35px; padding-top:0px;   position: absolute; right: 0;bottom: 0;  left: 0;padding: 0rem; 
+
+  text-align: center; ">
+        <span id="myBtn"><i class="fa fa-arrow-up fa-2x"></i></span>
     </div>
 
     <!-- The Modal -->
