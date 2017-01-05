@@ -1,4 +1,5 @@
-﻿
+﻿@using DmRepo
+@model List<DmRepo.Gmap>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
@@ -8,12 +9,13 @@
 
 
 <div id="map" class="indexgmaps"></div>
-<script>
+<script type="text/javascript">
 
     function initMap() {
         var mapcenter = { lat: 56.337486, lng: 10.5554786 };
-       
+
         var mapOptions = {
+            scrollwheel: false,
             zoom: 7,
             center: mapcenter
 
@@ -35,21 +37,24 @@
                 icon: iconBase + 'andet.png'
             }
         }
-        
+
         function addMarker(feature) {
             var marker = new google.maps.Marker({
                 position: feature.position,
                 icon: icons[feature.type].icon,
                 map: map
             });
-        } 
-        var features = [
+        }
+
+
+        features = [
             {
                 position: new google.maps.LatLng(55.88698, 10.72763),
                 type: 'Vrag'
-                
             }
         ]
+
+
         for (var i = 0, feature; feature = features[i]; i++) {
             addMarker(feature);
         }
